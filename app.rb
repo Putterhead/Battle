@@ -19,12 +19,15 @@ set :session_secret, "super secret"
   get '/play' do
     @player1_name = $player1.player_name
     @player2_name = $player2.player_name
+    @player1_health = $player1.health
+    @player2_health = $player2.health
     erb(:play)
   end
 
   get '/attack' do
     @player1_name = $player1.player_name
     @player2_name = $player2.player_name
+    $player1.attack($player2)
     erb(:attack)
   end
 

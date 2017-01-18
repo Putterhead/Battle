@@ -1,1 +1,13 @@
-<%= @player1_name %> attacks <%= @player2_name %>!
+<style>
+  .names, .ok_button  {
+    display:inline-block;
+  }
+</style>
+<div class="names">
+  <%= @player1_name %> attacks <%= @player2_name %>!
+</div>
+<div class="ok_button">
+  <form action='/play'>
+    <input type="submit" value="OK">
+  </form>
+</div>
