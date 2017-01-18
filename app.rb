@@ -21,6 +21,8 @@ class Battle < Sinatra::Base
 
   get '/attack_and_conf' do
     @player_1_name, @player_2_name = $player1.name, $player2.name
+    $player1.attack($player2)
+    @player1_HP, @player2_HP = $player1.hit_points, $player2.hit_points
     erb(:attack)
   end
 
