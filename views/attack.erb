@@ -1,4 +1,7 @@
-<%= @player_1.name %> attacked <%= @player_2.name %>
-Attack Confirmed <%= @player_1.hit_points %> <%= @player_2.hit_points %>
+<%= @game.player_1.name %> attacked <%= @game.player_2.name %>
+
+<%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP
+
+Attack Confirmed!
 
 <a href='/play'>OK</a>
