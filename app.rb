@@ -24,8 +24,12 @@ class Battle < Sinatra::Base
   get '/attack_and_conf' do
     @game = $game
     @game.attack(@game.opponent_of(@game.current_turn))
-    @game.switch_turns
-    erb(:attack)
+    if @game.opponent_of(@game.current_turn).hit_points == 0
+      erb(:game_over)
+    else
+      @game.switch_turns
+      erb(:attack)
+    end
   end
 
   run! if app_file == $0
